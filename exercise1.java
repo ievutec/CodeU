@@ -12,9 +12,8 @@ public boolean isInDictionary(String word){
   int max = -1;
   for(String key in map){
     int comp = word.compareTo(key.subString(0, word.length());
-    if(comp == 0) return true;
-    else if (comp < 0 && (max > map.get(key) || max == -1)) max = map.get(key);
-    else if (comp > 0 && min < map.get(key)) min = map.get(key);
+    if(comp == 0 || (comp > 0 && min < map.get(key))) min = map.get(key);
+    else (comp < 0 && (max > map.get(key) || max == -1)) max = map.get(key);
   }
   
   String temp = trivialDictionary.WordAt(min);
