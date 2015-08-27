@@ -1,7 +1,11 @@
 
 
 Integer hasMajority(ArrayList<Integer> list){
-  list.sort();
+  
+  if(list.isEmpty()) return null;
+  if(list.size() == 1) return list.get(0);
+  
+  Collections.sort(list);
   int lim = list.size()/2;
   while(!list.isEmpty()){
     int number = lastIndexOf(list.get(0)) + 1;
