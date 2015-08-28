@@ -8,7 +8,7 @@ public class Largest{
     if(array.length == 0) throw new IllegalArgumentException("The array is empty.");
     this.array = array;
     sorted = 0;
-    sort();
+    this.sort();
   }
   
   public Integer nthLargest(int n) throws IllegalArgumentException{
