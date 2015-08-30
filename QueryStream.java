@@ -1,34 +1,34 @@
 public class QueryStream {
     private List<Query> queryStream;
     private Iterator<Query> streamIterator;
-    private Query currentQuery;
+    private Query current;
     
     public QueryStream(List<Query> queryStream) {
         this.queryStream = queryStream;
         streamIterator = this.queryStream.iterator();
         if (this.streamIterator.hasNext()) {
-            System.out.println(0);  // first timestamp
-            currentQuery = streamIterator.next();
+            System.out.println(0);
+            current= streamIterator.next();
         }
     }
     
     public boolean hasNext() {
-        while (!(currentQuery.hasNext())) {     // find next query which has words
+        while (!(current.hasNext())) {
             if (!(streamIterator.hasNext())) {
                 return false;
             }
-            Query oldQuery = currentQuery;
-            currentQuery = streamIterator.next();
-            System.out.println(currentQuery.getTimestamp() - oldQuery.getTimestamp());
+            Query prev = current;
+            current = streamIterator.next();
+            System.out.println(current.getTimestamp() - prev.getTimestamp());
         }
         return true;
     }
     
     public String next() throws IllegalStateException {
         if (this.hasNext()) {
-            return currentQuery.next();
+            return current.next();
         } else {
-            throw new IllegalStateException("Error, all elements of query stream were already printed.");
+            throw new IllegalStateException("The QueryStream is empty.");
         }
     }
 }
