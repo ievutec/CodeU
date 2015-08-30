@@ -1,29 +1,29 @@
 public class Query {
     private Integer timestamp;
     private String words;
-    private Integer position; 
+    private Integer tracker; 
     
     public Query(String words) {
         this.words = words;
-        position = 0;
-    }
-    
-    public Integer getTimestamp() {
-        return this.timestamp;
+        tracker = 0;
     }
      
     public boolean hasNext() {
-        if (position == words.length()) return false;
-        while (words.charAt(position) == ' ') {
-            position++;
-            if (position == words.length()) return false;
+        if (tracker == words.length()) return false;
+        while (words.charAt(tracker) == ' ') {
+            tracker++;
+            if (tracker == words.length()) return false;
         }
         return true;
     }
     
     public String next() {
-        int oldPosition = position;
-        while (position < words.length() && words.charAt(position) != ' ') position++;
-        return words.substring(oldPosition, position);
+        int prev = tracker;
+        while (tracker < words.length() && words.charAt(position) != ' ') tracker++;
+        return words.substring(prev, tracker);
+    }
+    
+    public Integer getTimestamp() {
+    return this.timestamp;
     }
 }
