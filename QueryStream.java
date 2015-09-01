@@ -1,3 +1,6 @@
+
+// I've attempted the timestamps instead of <NEWQUERY> for the exercise.
+
 public class QueryStream {
     private List<Query> queryStream;
     private Iterator<Query> streamIterator;
