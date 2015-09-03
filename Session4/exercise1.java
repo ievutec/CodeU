@@ -37,7 +37,7 @@ public class Palindrome{
 	    char first = s.charAt(0);
 	    char last = s.charAt(s.length() - 1);
 	    if(first == last){
-		s = s.substring(1,s.length()-1);
+		s = s.substring(1,s.length()-1); // removes the first and last characters of the binary string if they are equal
 	    } 
 	    else return false;
 	}
