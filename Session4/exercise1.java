@@ -30,18 +30,17 @@ public class Palindrome{
     // reversed the second half and attempted to use an equality function supplied
     // by java.
     
-    public static boolean isPalindrome(String s){
+    
+        public static boolean isPalindrome(String s){
 	
-	while(!s.isEmpty()){
-	    if(s.length() == 1) return true;
-	    char first = s.charAt(0);
-	    char last = s.charAt(s.length() - 1);
-	    if(first == last){
-		s = s.substring(1,s.length()-1); // removes the first and last characters of the binary string if they are equal
-	    } 
-	    else return false;
-	}
-	return true;
+        if(s.isEmpty() || s.length() == 1) return true;
+	
+	char first = s.charAt(0);
+	char last = s.charAt(s.length() - 1);
+	if(first == last){
+	    return isPalindrome(s.substring(1,s.length()-1));
+	} 
+	else return false;
 	
     }
     
