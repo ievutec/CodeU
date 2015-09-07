@@ -16,11 +16,7 @@ public class Change{
 	
 	for(int i : coins){
 
-	    System.out.println("N = " + N);
-	    System.out.println("i = " + i);
-
 	    if(N-i == 0){
-		System.out.println("returned 1");
 		return 1;
 	    }
 	    else counter += makeChange(N-i, coins);
