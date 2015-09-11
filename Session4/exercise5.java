@@ -1,6 +1,13 @@
 import java.io.*;
 import java.util.HashSet;
 
+// NOTE: for the purposes of testing the exercise, I used a text file I found online
+// containing all the words in the english dictionary called "enable1.txt" which
+// I got from https://code.google.com/p/dotnetperls-controls/downloads/detail?name=enable1.txt
+// The words in the file are each on a separate line and could easily be read into a hashset.
+// I feel a Hashset is one of the best options for this sort of function, since memory is not
+// considered an issue (according to the exercise) and yet the contains function runs largely at
+// constant O(1) speed.
 
 public class LookUp{
 
