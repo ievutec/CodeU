@@ -44,8 +44,10 @@ public class LookUp{
 	} catch (IOException e) {
 	    throw new RuntimeException(e);
 	}
-	System.out.println(correct("giantelephant"));
-	System.out.println(correct("thesun"));
-	System.out.println(correct("a"));
+	System.out.println(correct("giantelephant")); // returns "Did you mean "giant elephant"?"
+	System.out.println(correct("thesun")); // returns "Did you mean "the sun"?"
+	System.out.println(correct("a")); // returns "a"
+	
+	// Note: I had some other tests and they all seemed to perform fine, including nonsense ones
     }
 }
